@@ -29,7 +29,9 @@ export class SignalComponent {
   // this can be only changed when the value on which it is dependent on changes
   count2 = computed(() => 100);
 
-  //? effect is used to run a function when a signal is updated
+  //? effect is a function that automatically runs whenever any signal it references changes
+  // it's like setting up an automatic reaction to signal updates
+  // useful for side effects like logging, API calls, or DOM updates
   constructor() {
     effect(() => {
       console.log(this.count());

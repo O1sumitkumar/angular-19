@@ -11,6 +11,35 @@
   <h1>{{ employee.city }}</h1>
 </div> -->
 
+<!--?
+  Angular 19 Loop Types:
+
+  1. @for - The new recommended way to loop:
+     - Syntax: @for (item of items; track property) { ... }
+     - Features: Better performance with required tracking
+     - Example: @for (employee of employeeData; track employee.id) { ... }
+
+  2. @empty - Used with @for to show content when the collection is empty:
+     - Example:
+       @for (...) { ... }
+       @empty { <p>No items found</p> }
+
+  3. *ngFor - The traditional directive (still supported):
+     - Syntax: <div *ngFor="let item of items; index as i"> ... </div>
+     - Features: Familiar syntax from previous Angular versions
+
+  4. @switch/@case - For conditional rendering based on a value:
+     - Example:
+       @switch (status) {
+         @case ('active') { <span>Active</span> }
+         @case ('inactive') { <span>Inactive</span> }
+         @default { <span>Unknown</span> }
+       }
+
+  The new control flow syntax (@for, @empty, @switch) offers better performance,
+  type safety, and improved developer experience compared to the older *ngFor approach.
+-->
+
 <!-- employee card this is the new way to do it -->
 <div class="main">
   @for (employee of employeeData; track employee.id; let id = $index) {

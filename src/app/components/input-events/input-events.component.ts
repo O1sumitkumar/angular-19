@@ -11,6 +11,13 @@ export class InputEventsComponent {
   name: string = '';
   password: string = '';
 
+  //? Type declaration for event parameters is important because:
+  // 1. TypeScript needs to know the event is of type Event to access properties like 'target'
+  // 2. Without proper typing, TypeScript can't verify we're using correct properties/methods
+  // 3. We need to cast (event.target as HTMLInputElement) to access the 'value' property
+  // 4. Type safety prevents runtime errors by catching type mismatches during development
+  // 5. It provides better IDE autocompletion and documentation
+
   onInput(event: Event) {
     this.name = (event.target as HTMLInputElement).value;
   }
