@@ -1,0 +1,32 @@
+<p>input-events works!</p>
+
+<form action="">
+  <label for="name"
+    >Name
+    <!-- this is the first way we can get the value of the input field -->
+    <input type="text" (input)="onInput($event)" />
+  </label>
+  <label for="email"
+    >Email
+    <!-- this is the second way we can get the value of the input field -->
+    <input type="email" (input)="onEmailInput($event)" />
+  </label>
+  <label for="password"
+    >Password
+    <!-- this is the third way we can get the value of the input field -->
+    <input type="password" (input)="onPasswordInput($event)" />
+  </label>
+  <button type="submit" (click)="onSubmit($event)">Submit</button>
+</form>
+
+<div
+  style="
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
+  "
+>
+  <p>Name: {{ name }}</p>
+  <p>Email: {{ email }}</p>
+</div>

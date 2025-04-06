@@ -1,0 +1,25 @@
+<p>for-loop works!</p>
+
+@for (item of users; track $index) {
+<h1>{{ item }}</h1>
+}
+
+<!-- employee card this is the old way to do it   -->
+<!-- <div *ngFor="let employee of employeeData">
+  <h1>{{ employee.name }}</h1>
+  <h1>{{ employee.age }}</h1>
+  <h1>{{ employee.city }}</h1>
+</div> -->
+
+<!-- employee card this is the new way to do it -->
+<div class="main">
+  @for (employee of employeeData; track employee.id; let id = $index) {
+  <div class="employee-card">
+    <span>{{ id + 1 }}</span>
+    <h1 class="employee-name">{{ employee.name }}</h1>
+    <h1 class="employee-age">{{ employee.age }}</h1>
+    <h1 class="employee-city">{{ employee.city }}</h1>
+    <button (click)="getEmployeeData(employee)">Get Employee Data</button>
+  </div>
+  }
+</div>

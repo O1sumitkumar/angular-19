@@ -1,0 +1,31 @@
+<p>control-statement works!</p>
+<button (click)="toggleRed()">
+  {{ isRed ? "Hide Red Box" : "Show Red Box" }}
+</button>
+<button (click)="toggleGreen()">
+  {{ isGreen ? "Hide Green Box" : "Show Green Box" }}
+</button>
+
+@if (isRed) {
+<div class="red box"></div>
+} @if (isGreen) {
+
+<div class="green box"></div>
+}
+
+<!-- for switch case -->
+
+<input #colorInput type="text" (input)="setColor(colorInput.value)" />
+
+<!-- dynamic box color based on input filed value -->
+<div class="box" [style.backgroundColor]="color"></div>
+
+<!-- color of the text based on case -->
+
+@switch (isGreen) { @case (isGreen === true) {
+<h2 [style.color]="color">{{ "Hello I am " + color + " color" }}</h2>
+} @case (isGreen === false) {
+<h2 [style.color]="color">{{ "Hello I am " + color + " color" }}</h2>
+} @default {
+<h2 [style.color]="color">{{ "Hello I am " + color + " color" }}</h2>
+} }
